@@ -20,3 +20,7 @@ game_is_on = True
 while game_is_on:
     screen.update_screen()
     ball.move()
+    if ball.ycor() > screen.top_wall() or ball.ycor() < screen.bottom_wall():
+        ball.bounce_y()
+    if ball.distance(right_paddle) < 50 and ball.xcor() > 340 or ball.distance(left_paddle) < 50 and ball.xcor() < -340:
+        ball.bounce_x()
