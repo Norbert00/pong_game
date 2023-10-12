@@ -1,11 +1,12 @@
 import time
 from turtle import Screen
 
-
 HEIGHT = 600
 WIDTH = 800
 BACKGROUND_COLOR = 'black'
 TITLE = "Pong Game"
+TOP_WALL = 280
+BOTTOM_WALL = -280
 
 
 def setup_screen():
@@ -34,3 +35,10 @@ class GameScreen():
             self.screen.onkey(paddle.go_up, "w")
             self.screen.onkey(paddle.go_down, "s")
 
+    @staticmethod
+    def top_wall():
+        return TOP_WALL
+
+    @staticmethod
+    def bottom_wall():
+        return BOTTOM_WALL
