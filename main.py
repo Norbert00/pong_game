@@ -17,6 +17,7 @@ time.sleep(0.1)
 ball = Ball()
 
 game_is_on = True
+# test commit
 while game_is_on:
     screen.update_screen()
     ball.move()
