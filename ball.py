@@ -5,6 +5,7 @@ WIDTH = 1
 HEIGHT = 1
 SHAPE = "circle"
 BALL_COLOR = "white"
+DEFAULT_SPEED = 0.02
 
 
 class Ball(Turtle):
@@ -16,6 +17,7 @@ class Ball(Turtle):
         self.penup()
         self.x_move = 10
         self.y_move = 10
+        self.ball_speed = DEFAULT_SPEED
 
     def move(self):
         time.sleep(0.1)
@@ -25,11 +27,14 @@ class Ball(Turtle):
 
     def bounce_y(self):
         self.y_move *= -1
+        self.ball_speed *= 0.2
 
     def bounce_x(self):
         self.x_move *= -1
+        self.ball_speed *= 0.2
 
     def reset_position(self):
         self.goto(0, 0)
+        self.ball_speed = DEFAULT_SPEED
         self.bounce_x()
 
